@@ -1,0 +1,9 @@
+nav a {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+nav a:hover {
+  color: #198754 !important;
+}
+.bg-dark {
+  --bs-bg-opacity: 0.8;
+}

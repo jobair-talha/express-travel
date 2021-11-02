@@ -1,0 +1,41 @@
+.banner {
+  background: url("../../../images/banner/banner.jpg") no-repeat center;
+  background-size: cover;
+}
+.banner .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 130px;
+}
+.banner .overlay h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+}
+.banner .overlay p {
+  color: #fff;
+  width: 570px;
+  margin: 15px auto;
+}
+
+@media (min-width: 320px) and (max-width: 575.98px) {
+  .banner .overlay {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+  .banner .overlay p {
+    width: auto;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .banner .overlay {
+    padding-top: 130px;
+    padding-bottom: 100px;
+  }
+  .banner .overlay p {
+    width: auto;
+  }
+}

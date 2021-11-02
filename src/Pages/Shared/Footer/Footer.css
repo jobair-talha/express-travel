@@ -1,0 +1,75 @@
+footer {
+  background: #2c3032;
+  padding-top: 30px;
+  color: #fff;
+}
+footer img {
+  margin-bottom: 10px;
+}
+footer h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+footer ul li {
+  margin-bottom: 3px;
+  font-size: 16px;
+  color: gray;
+}
+footer p {
+  color: gray;
+  margin-top: 8px;
+  font-size: 15px;
+}
+footer .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  position: relative;
+}
+footer .icons::after {
+  position: absolute;
+  content: "";
+  width: 45%;
+  height: 2px;
+  background: #fff;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+footer .icons::before {
+  position: absolute;
+  content: "";
+  width: 45%;
+  height: 2px;
+  background: #fff;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+}
+footer .icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  background: rgb(64 70 72);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+footer .developer {
+  text-align: center;
+}

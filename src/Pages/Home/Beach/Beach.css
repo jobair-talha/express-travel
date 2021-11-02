@@ -1,0 +1,39 @@
+.beach {
+  padding: 60px 0;
+  background-color: ghostwhite;
+}
+.beach h6 {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  margin-bottom: 15px;
+  color: gray;
+}
+.beach h3 {
+  font-weight: 600;
+  font-size: 36px;
+  color: #1b2b2f;
+}
+.beach p {
+  font-weight: 300;
+  font-size: 16px;
+  margin-top: 15px;
+  color: gray;
+}
+.beach h4 {
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.beach .disprice {
+  color: gray;
+}
+.beach .person {
+  color: gray;
+  font-weight: 400;
+}
+.beach button {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 20px;
+}
