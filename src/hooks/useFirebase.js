@@ -21,12 +21,14 @@ const useFirebase = () => {
       setUser(result.user);
     });
   };
+
   const signinUsignFacebook = () => {
     const facebookProvider = new FacebookAuthProvider();
     signInWithPopup(auth, facebookProvider).then((result) => {
       setUser(result.user);
     });
   };
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -35,7 +37,7 @@ const useFirebase = () => {
         setUser({});
       }
     });
-  }, []);
+  }, [auth]);
   const logOut = () => {
     signOut(auth).then(() => {
       setUser({});
@@ -46,6 +48,7 @@ const useFirebase = () => {
     signInUsingGoogle,
     signinUsignFacebook,
     logOut,
+    setUser,
   };
 };
 export default useFirebase;

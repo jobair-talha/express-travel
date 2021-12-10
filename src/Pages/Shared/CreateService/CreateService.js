@@ -2,10 +2,12 @@ import React from "react";
 import { Card, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import "./CreateService.css";
+import { Link } from "react-router-dom";
 
 const CreateService = (props) => {
-  const { service, price, details, img, day } = props.service;
+  const { _id, service, price, details, img, day } = props.service;
   return (
     <Col>
       <Card>
@@ -17,6 +19,13 @@ const CreateService = (props) => {
               <FontAwesomeIcon icon={faPlus} />
             </div>
           </div>
+          <Link className="edit" to={`/service/${_id}`}>
+            <FontAwesomeIcon
+              title="Edit"
+              className="edit-item"
+              icon={faInfoCircle}
+            />
+          </Link>
         </div>
         <Card.Body>
           <h2 className="price-details">

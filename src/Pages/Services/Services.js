@@ -14,7 +14,7 @@ const Services = () => {
     const service = serviceRef.current.value;
     const price = priceRef.current.value;
     const details = detailsRef.current.value;
-    const img = imgRef.current.value;
+    const img = imgRef.current.files;
     const day = dayRef.current.value;
     const addServices = { service, price, details, img, day };
     fetch("https://peaceful-spire-47787.herokuapp.com/service", {
@@ -82,10 +82,10 @@ const Services = () => {
               <Form.Group className="position-relative mb-3">
                 <Form.Label>Image URL:</Form.Label>
                 <Form.Control
-                  type="url"
+                  type="file"
                   ref={imgRef}
                   required
-                  name="url"
+                  name="file"
                   placeholder="example.com/example.jpg"
                 />
               </Form.Group>

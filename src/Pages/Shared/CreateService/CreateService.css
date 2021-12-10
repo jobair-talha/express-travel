@@ -1,7 +1,15 @@
 .main {
   position: relative;
 }
-
+.edit {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #fff;
+}
+.edit:hover {
+  color: #fff;
+}
 .caption {
   position: absolute;
   bottom: 8px;

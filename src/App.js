@@ -10,6 +10,7 @@ import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import Services from "./Pages/Services/Services";
 import Footer from "./Pages/Shared/Footer/Footer";
 import GetService from "./Pages/GetService/GetService";
+import EditService from "./Pages/EditService/EditService";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
           <Route exact path="/service">
             <GetService></GetService>
           </Route>
+          <PrivateRoute path="/service/:id">
+            <EditService></EditService>
+          </PrivateRoute>
           <Route exact path="/login">
             <Login></Login>
           </Route>

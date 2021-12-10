@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import LoginImg from "../../images/login/login.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +8,31 @@ import "./Login.css";
 import useAuth from "../../hooks/useAuth";
 
 const Login = () => {
-  const { signInUsingGoogle, signinUsignFacebook } = useAuth();
+  const { signInUsingGoogle, signinUsignFacebook, setUser } = useAuth();
+
+  const [email, setEmail] = useState("");
+
+  const [password, setPassword] = useState("");
+
+  const getEmail = (e) => {
+    const email = e.target.value;
+    setEmail(email);
+  };
+  const getPassword = (e) => {
+    const password = e.target.value;
+    setPassword(password);
+  };
+
+  const handlePassAuthentication = (e) => {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password).then((result) => {
+      const user = result.user;
+      console.log(user);
+      setUser(user);
+    });
+    e.preventDefault();
+  };
+
   return (
     <section className="login">
       <Container>
@@ -30,6 +55,7 @@ const Login = () => {
               <FontAwesomeIcon className="me-2" icon={faUser} />
               Login With Google
             </Button>
+
             <Button
               onClick={signinUsignFacebook}
               className="me-2 mb-2"
@@ -38,10 +64,15 @@ const Login = () => {
               <FontAwesomeIcon icon={faUser} />
               Login With FaceBook
             </Button>
-            <Form>
+
+            <Form onSubmit={handlePassAuthentication}>
               <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control
+                  onBlur={getEmail}
+                  type="email"
+                  placeholder="Enter email"
+                />
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
@@ -49,7 +80,11 @@ const Login = () => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control
+                  onBlur={getPassword}
+                  type="password"
+                  placeholder="Password"
+                />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
